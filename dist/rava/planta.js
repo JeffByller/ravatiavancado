@@ -58,10 +58,10 @@ export function drawHouse(canvas, source, room) {
   const rx=source.x*w/100,ry=source.y*h/100;
   ctx.save();ctx.beginPath();ctx.rect(42,35,675,490);ctx.clip();
   const glow=ctx.createRadialGradient(rx,ry,0,rx,ry,270);
-  glow.addColorStop(0,'rgba(43,154,131,.32)');glow.addColorStop(1,'rgba(43,154,131,0)');
+  glow.addColorStop(0,'rgba(224,154,40,.32)');glow.addColorStop(1,'rgba(224,154,40,0)');
   rect(40,32,680,496,glow);
   for(const radius of [54,97,142,190]){
-    ctx.beginPath();ctx.arc(rx,ry,radius,0,Math.PI*2);ctx.strokeStyle='rgba(32,116,98,.35)';ctx.lineWidth=2;ctx.stroke();
+    ctx.beginPath();ctx.arc(rx,ry,radius,0,Math.PI*2);ctx.strokeStyle='rgba(145,86,6,.65)';ctx.lineWidth=2;ctx.stroke();
   }
   ctx.restore();
   ctx.strokeStyle='#504e43';ctx.lineWidth=10;ctx.strokeRect(40,32,680,496);

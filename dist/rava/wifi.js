@@ -9,8 +9,8 @@ document.body.className = 'wifi';
 document.title = 'Casa interativa · Redes e Wi-Fi | RAVA';
 const main = document.querySelector('main');
 main.innerHTML = `
-<header><a class="brand" href="./">RAVA<span>Automação e Tecnologia</span></a><a href="./">‹ Serviços</a></header>
-<section class="hero"><p class="eyebrow">Redes e Wi-Fi</p><h1>Por onde anda o seu <em>Wi-Fi?</em></h1><p>Toque em um cômodo e leve o roteador para outro lugar. Veja como o sinal muda dentro da casa.</p></section>
+<nav><a href="./">‹ Voltar aos serviços</a><b>RAVA</b></nav>
+<section class="hero"><h1>Redes e Wi-Fi</h1><p>Toque em um cômodo e leve o roteador para outro lugar. Veja como o sinal muda dentro da casa.</p></section>
 <div class="workshop"><section class="mapPanel"><div class="mapTitle"><h2>Explore a casa</h2><span>Planta interativa</span></div>
 <div class="plan"><canvas aria-hidden="true" width="760" height="560"></canvas><div class="router" aria-hidden="true"><i></i>⌁</div></div>
 <div class="legend"><span><i></i> Roteador</span><span><b></b> Cômodo escolhido</span></div></section>

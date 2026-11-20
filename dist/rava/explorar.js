@@ -1,3 +1,4 @@
+import { arrivalDiagram, securityDiagram } from './diagramas.js';
 import { showVideo, setContact } from './contato.js';
 const homeVideo = ['Estudo de caso residencial no YouTube', 'py4qGLD3PRU'];
 const networkVideo = ['Conheça a rede da TI Avançado no YouTube', '5eVDZMcrP4Y'];
@@ -18,7 +19,7 @@ const themes = {
     fields:[['O que acionar na chegada?','Luz da entrada','Cortina','Luz e cortina']],
     draw([mode]) {
       const light = mode !== 'Cortina', open = mode !== 'Luz da entrada';
-      return [tiles([['Entrada', light ? '💡 Acesa' : '🌑 Apagada'],['Janela', open ? '🌤️ Cortina aberta' : '🪟 Cortina fechada']]), mode === 'Luz e cortina' ? 'A mesma cena acende a entrada e abre a cortina. Os dois dispositivos respondem ao mesmo comando.' : 'A cena aciona apenas o dispositivo escolhido. Experimente combinar luz e cortina.', 'Quero uma cena de chegada com esta opção: ' + mode + '.'];
+      return [arrivalDiagram(light, open), mode === 'Luz e cortina' ? 'A mesma cena acende a entrada e abre a cortina. Os dois dispositivos respondem ao mesmo comando.' : 'A cena aciona apenas o dispositivo escolhido. Experimente combinar luz e cortina.', 'Quero uma cena de chegada com esta opção: ' + mode + '.'];
     }, video:['Iluminação e cortinas em uma casa inteligente','sCRxNKpvuzA']
   },
   cftv: {
@@ -26,7 +27,7 @@ const themes = {
     fields:[['Área','Portão','Garagem'],['Enquadramento','Visão geral','Detalhe']],
     draw([area, framing]) {
       const close = framing === 'Detalhe';
-      return ['<div class="camera '+(close?'zoom':'')+'" aria-hidden="true"><span>'+(area==='Portão'?'🌳　🚶　🚪':'🧱　🚗　🛞')+'</span></div>', (close ? 'O recorte destaca ' + (area==='Portão'?'a pessoa':'o veículo') + ' e reduz o entorno visível.' : 'A visão aberta mostra a movimentação e o entorno, com menos detalhe em cada objeto.'), 'Tenho interesse em câmeras. Área: '+area+'. Objetivo: '+framing+'.'];
+      return [securityDiagram(area, close), (close ? 'O recorte destaca ' + (area==='Portão'?'a pessoa':'o veículo') + ' e reduz o entorno visível.' : 'A visão aberta mostra a movimentação e o entorno, com menos detalhe em cada objeto.'), 'Tenho interesse em câmeras. Área: '+area+'. Objetivo: '+framing+'.'];
     }, video:['Redes e câmeras IP na prática','SloqMWFqVhg']
   },
   cabeamento: {

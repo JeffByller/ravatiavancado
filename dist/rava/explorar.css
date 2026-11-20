@@ -16,4 +16,4 @@
   left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100% - 24px);
   margin:0;box-shadow:0 4px 20px #0005;
 }
-.wifi .service-media #contact {background:#214a40;color:white}
+.architecture {display:block;width:100%;height:auto}
