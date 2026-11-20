@@ -53,7 +53,7 @@ const find = id => document.getElementById(id);
 const key = new URLSearchParams(location.search).get('tema');
 const theme = Object.hasOwn(themes,key) ? themes[key] : null;
 if (key === 'wifi') {
-  import('./wifi.js');
+  location.replace('wifi.html' + location.hash);
 } else if (!theme) {
   location.replace('./');
 } else {

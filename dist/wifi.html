@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Redes e Wi-Fi | RAVA</title>
+  <link rel="icon" type="image/svg+xml" sizes="any" href="favicon.svg">
+  <link rel="stylesheet" href="explorar.css">
+  <link rel="stylesheet" href="wifi.css">
+  <link rel="modulepreload" href="planta.js">
+  <link rel="modulepreload" href="contato.js">
+  <script type="module" src="wifi.js"></script>
+</head>
+<body class="wifi">
+<main>
+<nav><a href="./">‹ Voltar aos serviços</a><b>RAVA</b></nav>
+<section class="hero"><h1>Redes e Wi-Fi</h1><p>Toque em um cômodo e leve o roteador para outro lugar. Veja como o sinal muda dentro da casa.</p></section>
+<div class="workshop"><section class="mapPanel"><div class="mapTitle"><h2>Explore a casa</h2><span>Planta interativa</span></div>
+<div class="plan"><canvas aria-hidden="true" width="760" height="560"></canvas><div class="router" aria-hidden="true"><i></i>⌁</div></div>
+<div class="legend"><span><i></i> Roteador</span><span><b></b> Cômodo escolhido</span></div></section>
+<section class="control"><h2>Onde fica o roteador?</h2><fieldset><legend class="sr">Posição do roteador</legend><div class="switch"></div></fieldset>
+<div class="reading" aria-live="polite"><span class="eyebrow" id="room"></span><div class="meter" aria-hidden="true"><i></i><i></i><i></i></div><h3 id="signal"></h3><p id="story"></p></div>
+<small>Simulação ilustrativa. Na sua casa, os materiais das paredes também influenciam o alcance.</small></section></div>
+<noscript>Ative o JavaScript para experimentar as posições do roteador.</noscript>
+</main>
+<footer class="service-media" hidden>
+  <h2 id="video-title"></h2>
+  <iframe loading="lazy" id="player" title="Vídeo da TI Avançado" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
+  <a id="watch" target="_blank" rel="noopener noreferrer">Assistir no YouTube</a>
+  <a id="contact" target="_blank" rel="noopener noreferrer">Conversar com a RAVA no WhatsApp</a>
+</footer></body></html>

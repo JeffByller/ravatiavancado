@@ -1,23 +1,8 @@
 import { showVideo, setContact } from './contato.js';
 import { drawHouse } from './planta.js';
 
-const sheet = document.createElement('link');
-sheet.rel = 'stylesheet';
-sheet.href = 'wifi.css';
-document.head.append(sheet);
-document.body.className = 'wifi';
-document.title = 'Casa interativa · Redes e Wi-Fi | RAVA';
 const main = document.querySelector('main');
-main.innerHTML = `
-<nav><a href="./">‹ Voltar aos serviços</a><b>RAVA</b></nav>
-<section class="hero"><h1>Redes e Wi-Fi</h1><p>Toque em um cômodo e leve o roteador para outro lugar. Veja como o sinal muda dentro da casa.</p></section>
-<div class="workshop"><section class="mapPanel"><div class="mapTitle"><h2>Explore a casa</h2><span>Planta interativa</span></div>
-<div class="plan"><canvas aria-hidden="true" width="760" height="560"></canvas><div class="router" aria-hidden="true"><i></i>⌁</div></div>
-<div class="legend"><span><i></i> Roteador</span><span><b></b> Cômodo escolhido</span></div></section>
-<section class="control"><h2>Onde fica o roteador?</h2><fieldset><legend class="sr">Posição do roteador</legend><div class="switch"></div></fieldset>
-<div class="reading" aria-live="polite"><span class="eyebrow" id="room"></span><div class="meter" aria-hidden="true"><i></i><i></i><i></i></div><h3 id="signal"></h3><p id="story"></p></div>
-<small>Simulação ilustrativa. Na sua casa, os materiais das paredes também influenciam o alcance.</small></section></div>
-`;
+
 const rooms = [
   {name:'Sala', x:27,y:42,activity:['O filme pode parar para carregar.', 'O filme roda, mas pode pausar de vez em quando.', 'Prepare a pipoca. O filme tem sinal para rodar com folga.']},
   {name:'Quarto', x:74,y:41,activity:['O vídeo na cama pode parar para carregar.','O vídeo chega ao quarto, com possíveis pausas.', 'O vídeo chega ao quarto com boa cobertura.']},

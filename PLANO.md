@@ -1,6 +1,6 @@
 # Refatoração da página RAVA
 
-A página reúne oito botões. Seis abrem conversas no WhatsApp. A proposta é que cada um desses seis abra primeiro uma experiência curta dentro da página. Mapa e Instagram continuam levando aos destinos indicados. A cópia de referência está em `dist/rava/index.html`.
+A página reúne oito botões. Seis abrem conversas no WhatsApp. A proposta é que cada um desses seis abra primeiro uma experiência curta dentro da página. Mapa e Instagram continuam levando aos destinos indicados. A cópia de referência está em `dist/index.html`.
 
 ## O que acontece em cada botão
 

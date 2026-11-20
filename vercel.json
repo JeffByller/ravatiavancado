@@ -1,7 +1,7 @@
 {
   "outputDirectory": "dist",
-  "trailingSlash": true,
   "redirects": [
-    { "source": "/", "destination": "/rava/", "permanent": false }
+    { "source": "/rava", "destination": "/", "permanent": true },
+    { "source": "/rava/:file", "destination": "/:file", "permanent": true }
   ]
 }
