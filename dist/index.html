@@ -229,7 +229,12 @@
 
   }
 </style>
-</head>
+<style>
+button.rava-btn {width:100%;text-align:left;cursor:pointer;font:inherit}
+button.rava-btn:focus-visible {outline:3px solid #f2b84b;outline-offset:3px}
+#service-view {display:block;position:fixed;inset:0;width:100%;height:100%;border:0;background:#090909}
+</style>
+<script type="module" src="navegacao.js"></script></head>
 <body>
 <section class="rava-bio">
   <div class="rava-wrap">
@@ -252,77 +257,77 @@
 
     <div class="rava-list">
 
-      <a class="rava-btn primary" href="explorar.html?tema=orcamento">
-        <div class="rava-icon">💬</div>
-        <div class="rava-text">
+      <button type="button" class="rava-btn primary" data-view="explorar.html?tema=orcamento">
+        <span class="rava-icon">💬</span>
+        <span class="rava-text">
           <strong>Solicitar orçamento</strong>
           <small>Monte o resumo do seu projeto.</small>
-        </div>
-        <div class="rava-arrow">›</div>
-      </a>
+        </span>
+        <span class="rava-arrow">›</span>
+      </button>
 
-      <a class="rava-btn" href="https://www.google.com/maps/search/?api=1&query=Av.%20Mal.%20Floriano%20Peixoto%2C%201786%20-%20Santo%20Ant%C3%B4nio%2C%20Campina%20Grande%20-%20PB%2C%2058406-010" target="_blank" rel="noopener noreferrer">
-        <div class="rava-icon">📍</div>
-        <div class="rava-text">
+      <button type="button" class="rava-btn" data-external="https://www.google.com/maps/search/?api=1&query=Av.%20Mal.%20Floriano%20Peixoto%2C%201786%20-%20Santo%20Ant%C3%B4nio%2C%20Campina%20Grande%20-%20PB%2C%2058406-010">
+        <span class="rava-icon">📍</span>
+        <span class="rava-text">
           <strong>Ver endereço no mapa</strong>
           <small>Av. Mal. Floriano Peixoto, 1786 - Santo Antônio, Campina Grande - PB.</small>
-        </div>
-        <div class="rava-arrow">›</div>
-      </a>
+        </span>
+        <span class="rava-arrow">›</span>
+      </button>
 
-      <a class="rava-btn" href="explorar.html?tema=automacao">
-        <div class="rava-icon">🏠</div>
-        <div class="rava-text">
+      <button type="button" class="rava-btn" data-view="explorar.html?tema=automacao">
+        <span class="rava-icon">🏠</span>
+        <span class="rava-text">
           <strong>Automação residencial</strong>
           <small>Experimente uma cena de chegada em casa.</small>
-        </div>
-        <div class="rava-arrow">›</div>
-      </a>
+        </span>
+        <span class="rava-arrow">›</span>
+      </button>
 
-      <a class="rava-btn" href="wifi.html">
-        <div class="rava-icon">📡</div>
-        <div class="rava-text">
+      <button type="button" class="rava-btn" data-view="wifi.html">
+        <span class="rava-icon">📡</span>
+        <span class="rava-text">
           <strong>Redes e Wi-Fi</strong>
           <small>Mude o roteador de lugar e compare o sinal.</small>
-        </div>
-        <div class="rava-arrow">›</div>
-      </a>
+        </span>
+        <span class="rava-arrow">›</span>
+      </button>
 
-      <a class="rava-btn" href="explorar.html?tema=cftv">
-        <div class="rava-icon">🎥</div>
-        <div class="rava-text">
+      <button type="button" class="rava-btn" data-view="explorar.html?tema=cftv">
+        <span class="rava-icon">🎥</span>
+        <span class="rava-text">
           <strong>CFTV e segurança</strong>
           <small>Teste o enquadramento de uma câmera.</small>
-        </div>
-        <div class="rava-arrow">›</div>
-      </a>
+        </span>
+        <span class="rava-arrow">›</span>
+      </button>
 
-      <a class="rava-btn" href="explorar.html?tema=cabeamento">
-        <div class="rava-icon">🔌</div>
-        <div class="rava-text">
+      <button type="button" class="rava-btn" data-view="explorar.html?tema=cabeamento">
+        <span class="rava-icon">🔌</span>
+        <span class="rava-text">
           <strong>Cabeamento e infraestrutura</strong>
           <small>Encontre o cabo da recepção em um rack.</small>
-        </div>
-        <div class="rava-arrow">›</div>
-      </a>
+        </span>
+        <span class="rava-arrow">›</span>
+      </button>
 
-      <a class="rava-btn" href="explorar.html?tema=empresas">
-        <div class="rava-icon">🏢</div>
-        <div class="rava-text">
+      <button type="button" class="rava-btn" data-view="explorar.html?tema=empresas">
+        <span class="rava-icon">🏢</span>
+        <span class="rava-text">
           <strong>Soluções para empresas</strong>
           <small>Explore a rede de uma loja ou escritório.</small>
-        </div>
-        <div class="rava-arrow">›</div>
-      </a>
+        </span>
+        <span class="rava-arrow">›</span>
+      </button>
 
-      <a class="rava-btn" href="https://www.instagram.com/ravatecnologia?igsh=MTI0dmhxYjdiYTRocw==" target="_blank" rel="noopener noreferrer">
-        <div class="rava-icon">📲</div>
-        <div class="rava-text">
+      <button type="button" class="rava-btn" data-external="https://www.instagram.com/ravatecnologia?igsh=MTI0dmhxYjdiYTRocw==">
+        <span class="rava-icon">📲</span>
+        <span class="rava-text">
           <strong>Ver Instagram da RAVA</strong>
           <small>Conheça projetos, soluções e novidades da empresa.</small>
-        </div>
-        <div class="rava-arrow">›</div>
-      </a>
+        </span>
+        <span class="rava-arrow">›</span>
+      </button>
 
     </div>
 

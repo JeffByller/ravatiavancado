@@ -17,3 +17,9 @@
   margin:0;box-shadow:0 4px 20px #0005;
 }
 .architecture {display:block;width:100%;height:auto}
+
+#back, #watch {
+  border:0; background:transparent; color:#f8ce80; padding:6px 0;
+  text-decoration:underline; font:inherit; cursor:pointer;
+}
+#contact {border:0;cursor:pointer;font-family:inherit}
