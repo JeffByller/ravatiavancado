@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RAVA Automação e Tecnologia</title>
+<style>body{margin:0;background:#000}*,*::before,*::after{box-sizing:border-box}</style>
+<style>
+  .rava-bio {
+    --bg: #000000;
+    --card: rgba(10, 10, 10, .96);
+    --gold: #F2B84B;
+    --gold2: #C8892E;
+    --brown: #1C1204;
+    --text: #FFFFFF;
+    --muted: #D6D6D6;
+    --line: rgba(242,184,75,.28);
+    --soft: rgba(242,184,75,.12);
+
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+      radial-gradient(circle at top, rgba(242,184,75,.16), transparent 30%),
+      radial-gradient(circle at 85% 18%, rgba(255,255,255,.06), transparent 24%),
+      linear-gradient(180deg, #000000 0%, #0B0B0B 55%, #000000 100%);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 18px 14px 38px;
+  }
+
+  .rava-bio * {
+    box-sizing: border-box;
+  }
+
+  .rava-wrap {
+    width: 100%;
+    max-width: 540px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .rava-profile {
+    background: linear-gradient(180deg, rgba(18,18,18,.98), rgba(0,0,0,.98));
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    padding: 24px 18px 22px;
+    margin-bottom: 16px;
+    box-shadow: 0 22px 60px rgba(0,0,0,.42);
+  }
+
+  .rava-logo-real {
+    width: 100%;
+    max-width: 330px;
+    margin: 0 auto 18px;
+    padding: 10px 14px;
+    border-radius: 22px;
+    background: #000;
+    border: 1px solid rgba(242,184,75,.30);
+    box-shadow: 0 0 34px rgba(242,184,75,.14);
+  }
+
+  .rava-logo-real img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  .rava-profile h1 {
+    margin: 0 0 8px;
+    font-size: 32px;
+    line-height: 1.08;
+    font-weight: 950;
+    letter-spacing: -.035em;
+    color: #fff;
+  }
+
+  .rava-profile h1 span {
+    color: var(--gold);
+  }
+
+  .rava-authority {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 6px auto 13px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(242,184,75,.12);
+    border: 1px solid rgba(242,184,75,.28);
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  .rava-profile p {
+    margin: 0 auto;
+    max-width: 440px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.58;
+  }
+
+  .rava-services {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 16px 0 0;
+  }
+
+  .rava-service-mini {
+    border-radius: 18px;
+    padding: 13px 10px;
+    background: rgba(255,255,255,.035);
+    border: 1px solid rgba(255,255,255,.08);
+  }
+
+  .rava-service-mini strong {
+    display: block;
+    color: #fff;
+    font-size: 13px;
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+
+  .rava-service-mini small {
+    display: block;
+    color: rgba(255,255,255,.68);
+    font-size: 11px;
+    line-height: 1.35;
+  }
+
+  .rava-list {
+    display: grid;
+    gap: 12px;
+  }
+
+  .rava-btn {
+    width: 100%;
+    min-height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 14px;
+    text-align: left;
+    padding: 13px 16px;
+    border-radius: 18px;
+    background: linear-gradient(180deg, rgba(18,18,18,.98), rgba(3,3,3,.98));
+    border: 1px solid rgba(242,184,75,.24);
+    color: #fff !important;
+    text-decoration: none !important;
+    box-shadow: 0 14px 38px rgba(0,0,0,.28);
+    transition: .18s ease;
+  }
+
+  .rava-btn:hover {
+    transform: translateY(-1px);
+    border-color: rgba(242,184,75,.52);
+    box-shadow: 0 16px 44px rgba(0,0,0,.38), 0 0 22px rgba(242,184,75,.12);
+  }
+
+  .rava-btn.primary {
+    background: linear-gradient(135deg, var(--gold), var(--gold2));
+    color: var(--brown) !important;
+    border-color: transparent;
+  }
+
+  .rava-btn.primary strong,
+  .rava-btn.primary small,
+  .rava-btn.primary .rava-arrow {
+    color: var(--brown) !important;
+  }
+
+  .rava-btn.primary .rava-icon {
+    background: rgba(0,0,0,.12);
+    border-color: rgba(0,0,0,.12);
+  }
+
+  .rava-icon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--soft);
+    border: 1px solid rgba(242,184,75,.28);
+    font-size: 21px;
+  }
+
+  .rava-text {
+    flex: 1;
+  }
+
+  .rava-text strong {
+    display: block;
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.2;
+    margin-bottom: 3px;
+  }
+
+  .rava-text small {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  .rava-arrow {
+    color: var(--gold);
+    font-size: 20px;
+    font-weight: 900;
+  }
+
+  .rava-footer {
+    margin-top: 20px;
+    color: rgba(255,255,255,.58);
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .rava-footer strong {
+    color: #fff;
+  }
+
+  @media (max-width: 420px) {
+    .rava-bio {
+      padding: 12px 12px 30px;
+    }
+
+    .rava-profile {
+      padding: 20px 14px 18px;
+      border-radius: 24px;
+    }
+
+    .rava-profile h1 {
+      font-size: 28px;
+    }
+
+    .rava-logo-real {
+      max-width: 285px;
+      padding: 8px 10px;
+      border-radius: 18px;
+    }
+
+    .rava-btn {
+      min-height: 58px;
+      padding: 12px 13px;
+    }
+
+    .rava-services {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+<section class="rava-bio">
+  <div class="rava-wrap">
+
+    <div class="rava-profile">
+
+      <div class="rava-logo-real">
+        <img decoding="async" src="data:image/webp;base64,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" alt="RAVA Automação e Tecnologia">
+      </div>
+
+            <div class="rava-authority">
+        Projetos residenciais e empresariais
+      </div>
+
+      <p>
+        Soluções em automação, redes, Wi-Fi, CFTV, cabeamento e infraestrutura para residências, empresas e ambientes inteligentes.
+      </p>
+
+      <div class="rava-services">
+        <div class="rava-service-mini">
+          <strong>Residencial</strong>
+          <small>Automação, Wi-Fi, câmeras e conforto</small>
+        </div>
+
+        <div class="rava-service-mini">
+          <strong>Empresarial</strong>
+          <small>Rede, infraestrutura, CFTV e segurança</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="rava-list">
+
+      <a class="rava-btn primary" href="explorar.html?tema=orcamento">
+        <div class="rava-icon">💬</div>
+        <div class="rava-text">
+          <strong>Solicitar orçamento</strong>
+          <small>Monte o resumo do seu projeto.</small>
+        </div>
+        <div class="rava-arrow">›</div>
+      </a>
+
+      <a class="rava-btn" href="https://www.google.com/maps/search/?api=1&query=Av.%20Mal.%20Floriano%20Peixoto%2C%201786%20-%20Santo%20Ant%C3%B4nio%2C%20Campina%20Grande%20-%20PB%2C%2058406-010" target="_blank" rel="noopener noreferrer">
+        <div class="rava-icon">📍</div>
+        <div class="rava-text">
+          <strong>Ver endereço no mapa</strong>
+          <small>Av. Mal. Floriano Peixoto, 1786 - Santo Antônio, Campina Grande - PB.</small>
+        </div>
+        <div class="rava-arrow">›</div>
+      </a>
+
+      <a class="rava-btn" href="explorar.html?tema=automacao">
+        <div class="rava-icon">🏠</div>
+        <div class="rava-text">
+          <strong>Automação residencial</strong>
+          <small>Experimente uma cena de chegada em casa.</small>
+        </div>
+        <div class="rava-arrow">›</div>
+      </a>
+
+      <a class="rava-btn" href="explorar.html?tema=wifi">
+        <div class="rava-icon">📡</div>
+        <div class="rava-text">
+          <strong>Redes e Wi-Fi</strong>
+          <small>Mude o roteador de lugar e compare o sinal.</small>
+        </div>
+        <div class="rava-arrow">›</div>
+      </a>
+
+      <a class="rava-btn" href="explorar.html?tema=cftv">
+        <div class="rava-icon">🎥</div>
+        <div class="rava-text">
+          <strong>CFTV e segurança</strong>
+          <small>Teste o enquadramento de uma câmera.</small>
+        </div>
+        <div class="rava-arrow">›</div>
+      </a>
+
+      <a class="rava-btn" href="explorar.html?tema=cabeamento">
+        <div class="rava-icon">🔌</div>
+        <div class="rava-text">
+          <strong>Cabeamento e infraestrutura</strong>
+          <small>Encontre o cabo da recepção em um rack.</small>
+        </div>
+        <div class="rava-arrow">›</div>
+      </a>
+
+      <a class="rava-btn" href="explorar.html?tema=empresas">
+        <div class="rava-icon">🏢</div>
+        <div class="rava-text">
+          <strong>Soluções para empresas</strong>
+          <small>Explore a rede de uma loja ou escritório.</small>
+        </div>
+        <div class="rava-arrow">›</div>
+      </a>
+
+      <a class="rava-btn" href="https://www.instagram.com/ravatecnologia?igsh=MTI0dmhxYjdiYTRocw==" target="_blank" rel="noopener noreferrer">
+        <div class="rava-icon">📲</div>
+        <div class="rava-text">
+          <strong>Ver Instagram da RAVA</strong>
+          <small>Conheça projetos, soluções e novidades da empresa.</small>
+        </div>
+        <div class="rava-arrow">›</div>
+      </a>
+
+    </div>
+
+    <div class="rava-footer">
+      <p><strong>RAVA Automação e Tecnologia</strong></p>
+      <p>Av. Mal. Floriano Peixoto, 1786 - Santo Antônio, Campina Grande - PB.</p>
+    </div>
+
+  </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,9 @@
+name: rava-dev
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "127.0.0.1:8766:80"
+    volumes:
+      - ./dist:/usr/share/nginx/html:ro
+      - ./nginx.dev.conf:/etc/nginx/conf.d/default.conf:ro
