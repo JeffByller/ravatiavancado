@@ -1,3 +1,4 @@
+import { showVideo, setContact } from './contato.js';
 import { drawHouse } from './planta.js';
 
 const sheet = document.createElement('link');
@@ -16,9 +17,7 @@ main.innerHTML = `
 <section class="control"><h2>Onde fica o roteador?</h2><fieldset><legend class="sr">Posição do roteador</legend><div class="switch"></div></fieldset>
 <div class="reading" aria-live="polite"><span class="eyebrow" id="room"></span><div class="meter" aria-hidden="true"><i></i><i></i><i></i></div><h3 id="signal"></h3><p id="story"></p></div>
 <small>Simulação ilustrativa. Na sua casa, os materiais das paredes também influenciam o alcance.</small></section></div>
-<section class="follow"><div><h2>Como é na sua casa?</h2><p>Leve o cômodo escolhido para a conversa com a RAVA.</p></div><div><details><summary>Revisar mensagem</summary><label for="message">Mensagem para a equipe</label><textarea id="message" rows="3"></textarea></details><a class="cta" id="contact" target="_blank" rel="noopener noreferrer">Conversar no WhatsApp</a></div></section>
-<a class="film" href="https://www.youtube.com/watch?v=py4qGLD3PRU" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">▶</span> Veja um projeto residencial no YouTube · TI Avançado</a>`;
-
+`;
 const rooms = [
   {name:'Sala', x:27,y:42,activity:['O filme pode parar para carregar.', 'O filme roda, mas pode pausar de vez em quando.', 'Prepare a pipoca. O filme tem sinal para rodar com folga.']},
   {name:'Quarto', x:74,y:41,activity:['O vídeo na cama pode parar para carregar.','O vídeo chega ao quarto, com possíveis pausas.', 'O vídeo chega ao quarto com boa cobertura.']},
@@ -51,7 +50,6 @@ positions.forEach((item,index) => {
   label.onchange = () => {position=index; render();};
   controls.append(label);
 });
-function contact() {get('contact').href='https://wa.me/5583988984828?text='+encodeURIComponent(get('message').value);}
 function render() {
   const selected = rooms[room], source = positions[position], level = source.levels[room];
   drawHouse(canvas, source, room);
@@ -62,8 +60,7 @@ function render() {
   get('signal').textContent=labels[level-1];
   get('story').textContent=selected.activity[level-1]+' '+(position===0 && room===1?'Da entrada até aqui, o sinal atravessa a casa. Experimente colocar o roteador no centro.':position===2 && room===1?'O roteador está no mesmo cômodo.':'Compare com outra posição do roteador.');
   main.querySelectorAll('.meter i').forEach((bar,i)=>bar.classList.toggle('on',i<level));
-  get('message').value='Olá, RAVA! Quero melhorar o Wi-Fi neste ambiente: '+selected.name+'. Na simulação, testei o roteador '+source.name.toLowerCase()+'.';
-  contact();
+  setContact('Quero melhorar o Wi-Fi neste ambiente: '+selected.name+'. Na simulação, testei o roteador '+source.name.toLowerCase()+'.');
 }
-get('message').oninput=contact;
+showVideo('Wi-Fi em um projeto residencial', 'py4qGLD3PRU');
 render();

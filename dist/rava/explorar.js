@@ -1,5 +1,6 @@
-const homeVideo = ['Estudo de caso residencial no YouTube', 'watch?v=py4qGLD3PRU'];
-const networkVideo = ['Conheça a rede da TI Avançado no YouTube', 'watch?v=5eVDZMcrP4Y'];
+import { showVideo, setContact } from './contato.js';
+const homeVideo = ['Estudo de caso residencial no YouTube', 'py4qGLD3PRU'];
+const networkVideo = ['Conheça a rede da TI Avançado no YouTube', '5eVDZMcrP4Y'];
 const tiles = items => '<div class="tiles">' + items.map(([name, value]) =>
   '<div class="tile"><b>' + name + '</b>' + value + '</div>').join('') + '</div>';
 
@@ -18,7 +19,7 @@ const themes = {
     draw([mode]) {
       const light = mode !== 'Cortina', open = mode !== 'Luz da entrada';
       return [tiles([['Entrada', light ? '💡 Acesa' : '🌑 Apagada'],['Janela', open ? '🌤️ Cortina aberta' : '🪟 Cortina fechada']]), mode === 'Luz e cortina' ? 'A mesma cena acende a entrada e abre a cortina. Os dois dispositivos respondem ao mesmo comando.' : 'A cena aciona apenas o dispositivo escolhido. Experimente combinar luz e cortina.', 'Quero uma cena de chegada com esta opção: ' + mode + '.'];
-    }, video:['Explorar o canal TI Avançado no YouTube','@TIAVANCADO']
+    }, video:['Iluminação e cortinas em uma casa inteligente','sCRxNKpvuzA']
   },
   cftv: {
     title:'CFTV e segurança', intro:'O que você precisa enxergar? Escolha a área e compare dois enquadramentos ilustrativos.',
@@ -26,7 +27,7 @@ const themes = {
     draw([area, framing]) {
       const close = framing === 'Detalhe';
       return ['<div class="camera '+(close?'zoom':'')+'" aria-hidden="true"><span>'+(area==='Portão'?'🌳　🚶　🚪':'🧱　🚗　🛞')+'</span></div>', (close ? 'O recorte destaca ' + (area==='Portão'?'a pessoa':'o veículo') + ' e reduz o entorno visível.' : 'A visão aberta mostra a movimentação e o entorno, com menos detalhe em cada objeto.'), 'Tenho interesse em câmeras. Área: '+area+'. Objetivo: '+framing+'.'];
-    }, video:homeVideo
+    }, video:['Redes e câmeras IP na prática','SloqMWFqVhg']
   },
   cabeamento: {
     title:'Cabeamento e infraestrutura', intro:'Qual porta atende à recepção? Toque em uma porta do rack e depois experimente revelar as etiquetas.',
@@ -65,25 +66,18 @@ if (key === 'wifi') {
       '<label><input type="radio" name="choice'+index+'" value="'+item+'" '+(i===0?'checked':'')+'> '+item+'</label>').join('')+'</div>';
     choices.append(field);
   });
-  const message = find('message');
-  function updateContact() {
-    find('contact').href = 'https://wa.me/5583988984828?text='+encodeURIComponent(message.value);
-  }
   function refresh() {
     const selected = Array.from(choices.querySelectorAll(':checked'),input => input.value);
     const [scene,result,summary] = theme.draw(selected);
     find('scene').innerHTML = scene;
     find('result').textContent = result;
-    message.value = 'Olá, RAVA! '+summary;
-    updateContact();
+    setContact(summary);
   }
   find('scene').addEventListener('click',event => {
     const port = event.target.closest('[data-port]');
     if (port) find('result').textContent = port.dataset.port==='2'?'Encontrou! A porta 3 atende à recepção. Com cada ponto identificado, a próxima manutenção fica mais simples.':'Esse ponto atende a outro ambiente. Experimente outra porta ou revele as etiquetas.';
   });
   choices.addEventListener('change',refresh);
-  message.addEventListener('input',updateContact);
-  find('video').textContent = theme.video[0];
-  find('video').href = 'https://www.youtube.com/'+theme.video[1];
+  showVideo(...theme.video);
   refresh();
 }
